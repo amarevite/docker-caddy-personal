@@ -9,6 +9,10 @@ jobs:
   check:
     name: Update Caddy version
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
     outputs:
       should-build: ${{ steps.caddy-update.outputs.should-build }}
 
