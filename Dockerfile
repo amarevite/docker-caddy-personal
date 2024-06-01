@@ -1,13 +1,13 @@
-ARG CADDY_VERSION=2.8.1
+ARG CADDY_VERSION=2.7.6
 
 # Builder
 FROM caddy:${CADDY_VERSION}-builder-alpine AS builder
 
 RUN xcaddy build \
-    --with github.com/caddy-dns/porkbun \
-    --with github.com/caddyserver/cache-handler \
-    --with github.com/caddyserver/replace-response \
-    --with github.com/abiosoft/caddy-exec
+    --replace github.com/caddy-dns/porkbun \
+    --replace github.com/caddyserver/cache-handler \
+    --replace github.com/caddyserver/replace-response \
+    --replace github.com/abiosoft/caddy-exec
 
 # Container
 FROM caddy:${CADDY_VERSION}-alpine
