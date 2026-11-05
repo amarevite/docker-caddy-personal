@@ -1,5 +1,5 @@
 ARG CADDY_VERSION=2.11.7
-ARG LIBRARY_PREFIX=docker.io/library
+ARG LIBRARY_PREFIX=docker.io/caddy
 
 # xcaddy build layer
 FROM ${LIBRARY_PREFIX}/caddy:${CADDY_VERSION}-builder-alpine AS builder
